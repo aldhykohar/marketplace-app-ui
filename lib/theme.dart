@@ -24,7 +24,7 @@ InputDecorationTheme inputDecorationTheme() {
       gapPadding: 10);
   return InputDecorationTheme(
     floatingLabelBehavior: FloatingLabelBehavior.always,
-    contentPadding: EdgeInsets.symmetric(horizontal: 42, vertical: 20),
+    contentPadding: EdgeInsets.only(left: 42, top: 20, bottom: 20, right: 20),
     enabledBorder: outlineInputBorderEnabled,
     focusedBorder: outlineInputBorderFocused,
   );

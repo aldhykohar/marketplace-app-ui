@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:marketplace_app/components/custom_suffix_icon.dart';
 import 'package:marketplace_app/components/default_button.dart';
 import 'package:marketplace_app/components/form_error.dart';
+import 'package:marketplace_app/screen/forgot_password/forgot_password_screen.dart';
 
 import '../../../constants.dart';
 import '../../../size_config.dart';
@@ -43,9 +44,13 @@ class _SignInFormState extends State<SignInForm> {
               ),
               Text("Remember Me"),
               Spacer(),
-              Text(
-                "Forgot Password",
-                style: TextStyle(decoration: TextDecoration.underline),
+              GestureDetector(
+                onTap: () => Navigator.pushNamed(
+                    context, ForgotPasswordScreen.routeName),
+                child: Text(
+                  "Forgot Password",
+                  style: TextStyle(decoration: TextDecoration.underline),
+                ),
               )
             ],
           ),

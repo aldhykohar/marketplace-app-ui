@@ -5,31 +5,15 @@ import 'package:marketplace_app/size_config.dart';
 class DefaultButton extends StatelessWidget {
   const DefaultButton({
     Key? key,
-    required this.text,
-    required this.press,
+    this.text,
+    this.press,
   }) : super(key: key);
 
-  final String text;
-  final Function() press;
+  final String? text;
+  final Function()? press;
 
   @override
   Widget build(BuildContext context) {
-    /*return SizedBox(
-      width: double.infinity,
-      height: getProportionateScreenHeight(56),
-      child: FlatButton(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20),
-        ),
-        onPressed: press,
-        child: Text(
-          text,
-          style: TextStyle(
-              fontSize: getProportionateScreenWidth(18), color: Colors.white),
-        ),
-        color: kPrimaryColor,
-      ),
-    );*/
     final ButtonStyle flatButtonStyle = TextButton.styleFrom(
       primary: Colors.white,
       padding: EdgeInsets.symmetric(horizontal: 16.0),
@@ -46,8 +30,10 @@ class DefaultButton extends StatelessWidget {
         style: flatButtonStyle,
         onPressed: press,
         child: Text(
-          text,
-          style: TextStyle(fontSize: getProportionateScreenWidth(18)),
+          text!,
+          style: TextStyle(
+            fontSize: getProportionateScreenWidth(18),
+          ),
         ),
       ),
     );

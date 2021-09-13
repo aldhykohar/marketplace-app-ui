@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:marketplace_app/components/default_button.dart';
 import 'package:marketplace_app/constants.dart';
+import 'package:marketplace_app/screen/sign_in/sign_in_screen.dart';
 import 'package:marketplace_app/screen/splash/components/splash_content.dart';
 import 'package:marketplace_app/size_config.dart';
 
@@ -42,10 +43,11 @@ class _BodyState extends State<Body> {
                     });
                   },
                   itemCount: splashData.length,
-                  itemBuilder: (context, index) => SplashContent(
-                    text: splashData[index]["text"] ?? '',
-                    image: splashData[index]["image"] ?? '',
-                  ),
+                  itemBuilder: (context, index) =>
+                      SplashContent(
+                        text: splashData[index]["text"],
+                        image: splashData[index]["image"],
+                      ),
                 )),
             Expanded(
               flex: 2,
@@ -60,7 +62,7 @@ class _BodyState extends State<Body> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: List.generate(
                         splashData.length,
-                        (index) => buildDot(index: index),
+                            (index) => buildDot(index: index),
                       ),
                     ),
                     Spacer(
@@ -68,7 +70,9 @@ class _BodyState extends State<Body> {
                     ),
                     DefaultButton(
                       text: "Continue",
-                      press: () {},
+                      press: () {
+                        Navigator.pushNamed(context, SignInScreen.routeName);
+                      },
                     ),
                     Spacer(),
                   ],

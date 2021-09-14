@@ -3,6 +3,7 @@ import 'package:marketplace_app/components/custom_suffix_icon.dart';
 import 'package:marketplace_app/components/default_button.dart';
 import 'package:marketplace_app/components/form_error.dart';
 import 'package:marketplace_app/screen/forgot_password/forgot_password_screen.dart';
+import 'package:marketplace_app/screen/login_success/login_success_screen.dart';
 
 import '../../../constants.dart';
 import '../../../size_config.dart';
@@ -63,6 +64,7 @@ class _SignInFormState extends State<SignInForm> {
             press: () {
               if (_formKey.currentState!.validate()) {
                 _formKey.currentState!.save();
+                Navigator.pushNamed(context, LoginSuccessScreen.routeName);
               }
             },
           )
@@ -73,6 +75,7 @@ class _SignInFormState extends State<SignInForm> {
 
   TextFormField buildPasswordFormField() {
     return TextFormField(
+      obscureText: true,
       keyboardType: TextInputType.emailAddress,
       onSaved: (newValue) => password = newValue!,
       onChanged: (value) {

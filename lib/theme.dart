@@ -27,6 +27,8 @@ InputDecorationTheme inputDecorationTheme() {
     contentPadding: EdgeInsets.only(left: 42, top: 20, bottom: 20, right: 20),
     enabledBorder: outlineInputBorderEnabled,
     focusedBorder: outlineInputBorderFocused,
+    focusedErrorBorder:outlineInputBorderFocused,
+    errorBorder:outlineInputBorderEnabled,
   );
 }
 

@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:marketplace_app/components/no_account_text.dart';
 import 'package:marketplace_app/components/social_card.dart';
-import 'package:marketplace_app/constants.dart';
-import 'package:marketplace_app/screen/forgot_password/forgot_password_screen.dart';
 import 'package:marketplace_app/screen/sign_in/components/sign_form.dart';
 import 'package:marketplace_app/size_config.dart';
 

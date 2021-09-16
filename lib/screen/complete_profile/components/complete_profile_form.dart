@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:marketplace_app/components/custom_suffix_icon.dart';
 import 'package:marketplace_app/components/default_button.dart';
 import 'package:marketplace_app/components/form_error.dart';
+import 'package:marketplace_app/screen/otp/otp_screen.dart';
 
 import '../../../constants.dart';
 import '../../../size_config.dart';
@@ -53,7 +54,9 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
           DefaultButton(
             text: "Continue",
             press: () {
-              if (_formKey.currentState!.validate()) {}
+              if (_formKey.currentState!.validate()) {
+                Navigator.pushNamed(context, OtpScreen.routeName);
+              }
             },
           )
         ],

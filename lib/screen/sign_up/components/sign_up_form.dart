@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:marketplace_app/components/custom_suffix_icon.dart';
 import 'package:marketplace_app/components/default_button.dart';
 import 'package:marketplace_app/components/form_error.dart';
+import 'package:marketplace_app/screen/complete_profile/complete_profile_screen.dart';
 
 import '../../../constants.dart';
 import '../../../size_config.dart';
@@ -50,7 +51,9 @@ class _SignUpFormState extends State<SignUpForm> {
             DefaultButton(
               text: "Continue",
               press: () {
-                if (_formKey.currentState!.validate()) {}
+                if (_formKey.currentState!.validate()) {
+                  Navigator.pushNamed(context, CompleteProfileScreen.routeName);
+                }
               },
             )
           ],
@@ -63,7 +66,7 @@ class _SignUpFormState extends State<SignUpForm> {
       keyboardType: TextInputType.visiblePassword,
       onSaved: (newValue) => confirmPassword = newValue!,
       onChanged: (value) {
-        if (password == confirmPassword) {
+        if (password == value) {
           removeError(error: kMatchPassError);
         }
         return null;
@@ -71,7 +74,7 @@ class _SignUpFormState extends State<SignUpForm> {
       validator: (value) {
         if (value!.isEmpty) {
           return "";
-        } else if (password != confirmPassword) {
+        } else if (password != value) {
           addError(error: kMatchPassError);
           return "";
         }

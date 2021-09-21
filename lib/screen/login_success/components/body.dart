@@ -12,6 +12,7 @@ class Body extends StatelessWidget {
       child: Column(
         children: [
           SizedBox(height: SizeConfig.screenHeight * 0.04),
+          Spacer(),
           Image.asset(
             "assets/images/success.png",
             height: SizeConfig.screenHeight * 0.2,

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:marketplace_app/screen/cart/cart_screen.dart';
 import 'package:marketplace_app/screen/home/components/search_field.dart';
 
 import '../../../size_config.dart';
 import 'icon_btn_with_counter.dart';
-
 
 class HomeHeader extends StatelessWidget {
   const HomeHeader({
@@ -13,15 +13,15 @@ class HomeHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(
-          horizontal: getProportionateScreenWidth(20)),
+      padding:
+          EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           SearchField(),
           IconBtnWithCounter(
             icons: Icons.shopping_cart_outlined,
-            press: () {},
+            press: () => Navigator.pushNamed(context, CartScreen.routeName),
           ),
           IconBtnWithCounter(
             icons: Icons.notifications_none_rounded,

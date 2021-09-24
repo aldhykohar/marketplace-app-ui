@@ -6,6 +6,7 @@ import 'package:marketplace_app/screen/forgot_password/forgot_password_screen.da
 import 'package:marketplace_app/screen/home/home_screen.dart';
 import 'package:marketplace_app/screen/login_success/login_success_screen.dart';
 import 'package:marketplace_app/screen/otp/otp_screen.dart';
+import 'package:marketplace_app/screen/profile/profile_screen.dart';
 import 'package:marketplace_app/screen/sign_in/sign_in_screen.dart';
 import 'package:marketplace_app/screen/sign_up/sign_up_screen.dart';
 import 'package:marketplace_app/screen/splash/splash_screen.dart';
@@ -23,4 +24,5 @@ final Map<String, WidgetBuilder> routes = {
   HomeScreen.routeName: (context) => HomeScreen(),
   DetailsScreen.routeName: (context) => DetailsScreen(),
   CartScreen.routeName: (context) => CartScreen(),
+  ProfileScreen.routeName: (context) => ProfileScreen(),
 };
